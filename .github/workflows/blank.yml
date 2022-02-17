@@ -1,0 +1,63 @@
+# Task1 Extra
+
+name: Task1_Extra
+env: 
+   Deploy_Ver             : ${{github.sha}}
+   YEAR                   : 2022
+   MONTH                  : February
+   DAY_OF_THE_MONTH       : 17
+   FAVORITE_DAY           : ${{secrets.FAVORITE_DAY_OF_WEEK}}
+
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+
+# Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  task1:
+    # The type of runner that the job will run on
+    runs-on  : ubuntu-latest
+    
+    defaults :
+       run   :
+         working-directory: Task1
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository, so your job can access it
+      - name : Step 1 Fit clone my repo
+        uses : actions/checkout@v1
+      # Print the list of files/directories in your github repository.
+      - name : Step 2 ls 
+        run  : ls
+      # Print content of your log.txt file
+      - name : Step 3 cat         
+        run  : cat log.txt
+      - name : Step 4 Deploy-Version          
+        run  : echo "Deploy-Version = ${{env.Deploy_Ver}}"
+        
+          
+  task2:
+  
+    runs-on: ubuntu-latest
+    # Run  after the First job is finished.
+    needs: [task1]
+    
+    
+    steps: 
+      - name  : Step 1 Print the system date and time
+        run   : date
+      - name  : Step 2 Print DAY_OF_THE_MONTH
+        run   : echo "DAY_OF_THE_MONTH = ${{env.DAY_OF_THE_MONTH}}"
+      - name  : Step 3 Print MONTH
+        run   : echo "MONTH = ${{env.MONTH}}"
+      - name  : Step 4 Print YEAR
+        run   : echo "YEAR = ${{env.YEAR}}"        
+      - name  : Step 5 Print FAVORITE_DAY
+        run   : echo "FAVORITE_DAY = ${{secrets.FAVORITE_DAY_OF_WEEK}}"
