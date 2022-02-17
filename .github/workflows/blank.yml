@@ -44,11 +44,10 @@ jobs:
       MONTH                  : "March"
       DAY_OF_THE_MONTH       : 1
       YEAR                   : 2222
+      FAVORITE_DAY_OF_WEEK   : "Friday"
       
     steps: 
-      - name: Print My favorite day of week
-        env:
-         FAVORITE_DAY_OF_WEEK : "Friday"
+      - name: Print My favorite day of week         
         run: echo "My favorite day of week is $FAVORITE_DAY_OF_WEEK"
            
       - name  : Step 1 Print the system date and time
