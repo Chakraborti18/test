@@ -44,7 +44,7 @@ jobs:
       MONTH                  : "March"
       DAY_OF_THE_MONTH       : 1
       YEAR                   : 2222
-      FAVORITE_DAY_OF_WEEK   : "Friday"
+      FAVORITE_DAY_OF_WEEK   : "${{ secrets.Friday }} Friday"
       
     steps: 
       - name: Print My favorite day of week         
