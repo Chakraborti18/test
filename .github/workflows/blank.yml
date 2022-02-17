@@ -60,8 +60,8 @@ jobs:
       - name  : Step 2 Print DAY_OF_THE_MONTH
         run   :
                 echo "DAY = ${{env.DAY_OF_THE_MONTH}}"
-                echo "MONTH = ${{env.MONTH}}"
-                echo "YEAR = ${{env.YEAR}}"
-                echo "it's a very secret day"
+                "MONTH = ${{env.MONTH}}"
+                "YEAR = ${{env.YEAR}}"
+                "it's a very secret day"
       - name  : Step 3 Print FAVORITE_DAY
         run   : echo "FAVORITE_DAY = ${{secrets.FAVORITE_DAY_OF_WEEK}}"
