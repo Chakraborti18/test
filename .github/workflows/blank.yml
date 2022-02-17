@@ -47,9 +47,7 @@ jobs:
       FAVORITE_DAY_OF_WEEK   : "Friday"
       
     steps: 
-      - name: Print My favorite day of week         
-        run: echo "My favorite day of week is $FAVORITE_DAY_OF_WEEK"
-           
+      
       - name  : Step 1 Print the system date and time
         run   : date
       - name  : Step 2 Print variable’s content 
