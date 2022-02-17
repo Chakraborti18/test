@@ -20,8 +20,7 @@ jobs:
       - name: Print the list of files/directories repo
         run: ls -la
 
-      - name: Print content of log.txt file
-        run: cat log.txt
+      
 
       - name: Print hello
         run: echo "Hello from ${{ env.DEPLOY_VER }} commit"
