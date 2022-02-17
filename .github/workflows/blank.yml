@@ -12,8 +12,8 @@ on:
   
 # This variables can be called from any step of any job
 env: 
-   Deploy_Ver             : ${{ github.sha }}
-   YEAR                   : 2222
+   DEPLOY_VER: ${{ github.sha }}
+   
    
 
 
@@ -37,7 +37,7 @@ jobs:
       - name : Step 2 cat         
         run  : cat log.txt
       - name : Step 3 Print hello          
-        run  : echo "Hello from $env.VAR commit"
+        run  : echo "Hello from ${{ env.DEPLOY_VER }} commit"
         
           
   Job2_extra1:
@@ -48,7 +48,8 @@ jobs:
     env:      
       MONTH                  : "March"
       DAY_OF_THE_MONTH       : 1
-   
+      YEAR                   : 2222
+      
     steps: 
       - name: Print My favorite day of week
         env:
