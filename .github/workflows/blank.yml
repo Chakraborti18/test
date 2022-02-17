@@ -48,7 +48,7 @@ jobs:
       
     steps: 
       - name: Print My favorite day of week         
-        run: echo "My favorite day of week is ${{ FAVORITE_DAY_OF_WEEK }}"
+        run: echo "My favorite day of week is $FAVORITE_DAY_OF_WEEK"
            
       - name  : Step 1 Print the system date and time
         run   : date
