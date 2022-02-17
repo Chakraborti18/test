@@ -44,7 +44,7 @@ jobs:
       MONTH                  : "March"
       DAY_OF_THE_MONTH       : 1
       YEAR                   : 2022
-      FAVORITE_DAY_OF_WEEK   : "Sunday"
+      FAVORITE_DAY_OF_WEEK   : "Sunday and Friday"
       
     steps: 
       
