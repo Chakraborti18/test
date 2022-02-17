@@ -59,7 +59,7 @@ jobs:
         run   : date
       - name  : Step 2 Print DAY_OF_THE_MONTH
         run   :
-                echo "Day - ${{ env.DAY_OF_THE_MONTH }}
+                echo Day - ${{ env.DAY_OF_THE_MONTH }}
                 Month - ${{ env.MONTH }}
                 Year - ${{ env.YEAR }}
                 "it's a very secret day"
